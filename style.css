@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:411, 711');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 102vh;
+    background: #423751;
+}
+ul
+{
+    position: relative;
+    transform: skewY(-17deg);
+}
+ul li /* mudaa tamanho de listas */
+{
+    position: relative;
+    list-style: none;
+    width: 250px;
+    background: #1e3f46;
+    padding: 15px;
+    transition: 0.7s;
+    z-index: calc(1 * var(--i));
+}
+ul li:hover
+{
+    transform: translateX(-50px);
+    background: var(--clr);
+}
+ul li::before  /* onde estao os icons localizados */
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: hsl(60, 83%, 45%);
+    filter: brightness(0.8);
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.6s;
+}
+
+
+ul li:hover::before
+{
+    background: var(--clr);
+    filter: brightness(0.8);
+}
+ul li::after
+{
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #423751;
+    filter: brightness(0.9);
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+ul li:hover::after
+{
+    background: var(--clr);
+    filter: brightness(0.9);
+}
+ul li a
+{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+ul li:hover a
+{
+  color: #fff;
+}
+ul li:last-child::after /* efito de sombra */
+{
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 25);
+}
+ul li span
+{
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    filter: brightness(0.8);
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 3.5;
+    font-size: 1.23em; 
+}
+ul li:hover span
+{
+    opacity: 1;
+}
+
